@@ -15,7 +15,7 @@ def download_file(url, file_pname, chunk_size=1024*4):
     response_data_file = requests.get(url, stream=True)
     with open(file_pname, 'wb') as f:
         for chunk in response_data_file.iter_content(chunk_size=chunk_size):
-            print('downloading')
+            
             if chunk:
                 f.write(chunk)
 
@@ -29,5 +29,5 @@ def download_file(url, file_pname, chunk_size=1024*4):
 
 
 download_file(url, 'a.mp4')
-
+print('Over!')
 
